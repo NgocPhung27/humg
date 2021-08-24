@@ -24,7 +24,6 @@ namespace bt1
 
         private void btnnhap_Click(object sender, EventArgs e)
         {
-            int tongchan = 0, tongle = 0, tongdayso = 0;
             int x = Convert.ToInt32(txtnhapso.Text);
             txtdayvuanhap.Text += x.ToString() + " ";
             if (x % 2 == 0)
@@ -46,7 +45,7 @@ namespace bt1
         int tongchan = 0, tongle = 0, tongdayso = 0;
         private void btntieptuc_Click(object sender, EventArgs e)
         {
-            /*int tongchan = 0, tongle = 0, tongdayso = 0;*/
+           
             txtdayvuanhap.Text = "";
             txttongphantutrongday.Text = "";
             txttongchan.Text = "";
