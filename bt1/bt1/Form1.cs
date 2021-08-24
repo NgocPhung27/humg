@@ -43,10 +43,10 @@ namespace bt1
 
             txtnhapso.Clear();
         }
-
+        int tongchan = 0, tongle = 0, tongdayso = 0;
         private void btntieptuc_Click(object sender, EventArgs e)
         {
-            int tongchan = 0, tongle = 0, tongdayso = 0;
+            /*int tongchan = 0, tongle = 0, tongdayso = 0;*/
             txtdayvuanhap.Text = "";
             txttongphantutrongday.Text = "";
             txttongchan.Text = "";
