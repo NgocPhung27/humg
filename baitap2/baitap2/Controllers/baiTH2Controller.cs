@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BTH2.Models;
+using baitap2.Models;
 
-namespace BTH2.Controllers
+namespace baitap2.Controllers
 {
-    public class BTH2Controller : Controller
+    public class baiTH2Controller : Controller
     {
-        GiaiPhuongTrinh gpt = new GiaiPhuongTrinh();
-        // GET: BTH2
+        giai_phuong_trinh gpt = new giai_phuong_trinh();
+        // GET: baiTH2
         public ActionResult Index()
         {
             return View();
@@ -20,13 +20,16 @@ namespace BTH2.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult GiaiPTB1( double hesoA, double hesoB)
+
+        public ActionResult GiaiPTB1(double hesoA, double hesoB)
+
         {
             double x = gpt.GiaiPhuongTrinhBacNhat(hesoA, hesoB);
+
             ViewBag.nghiemPT = x;
+
             return View();
 
         }
-
     }
 }
