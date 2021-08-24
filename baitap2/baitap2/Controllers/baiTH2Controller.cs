@@ -26,7 +26,7 @@ namespace baitap2.Controllers
         {
             double x = gpt.GiaiPhuongTrinhBacNhat(hesoA, hesoB);
 
-            ViewBag.nghiemPT = x;
+            ViewBag.nghiemPT=x;
 
             return View();
 
