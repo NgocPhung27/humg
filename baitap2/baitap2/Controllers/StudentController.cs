@@ -13,6 +13,11 @@ namespace baitap2.Controllers
         {
             return View();
         }
+        public ActionResult GetInfo()
+        {
+            return View();
+        }
+        [HttpPost]
         public ActionResult GetInfo( string hoten, string tuoi, string lop)
         {
             ViewBag.hoten = hoten;
