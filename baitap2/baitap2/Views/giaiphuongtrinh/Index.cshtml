@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <label> Số thứ nhất: </label>
+    <input type="text" name="hesoA " />
+    <br />
+    <label> Số thứ hai: </label>
+    <input type="text" name="hesoB " />
+    <input type="submit" value="Giai Phuong Trinh " />
+
+}
+<h2> Nghiệm của PT là:@ViewBag.nghiemPT</h2>
+
