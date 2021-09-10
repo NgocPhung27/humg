@@ -1,18 +1,18 @@
-namespace BT.Migrations
+namespace LapTrinhQuanLyDb.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BT.Models.LTQLDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<LapTrinhQuanLyDb.Models.LTQLDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(BT.Models.LTQLDbContext context)
+        protected override void Seed(LapTrinhQuanLyDb.Models.LTQLDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

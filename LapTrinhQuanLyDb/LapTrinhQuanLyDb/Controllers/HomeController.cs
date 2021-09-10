@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BT.Controllers
+namespace LapTrinhQuanLyDb.Controllers
 {
     public class HomeController : Controller
     {

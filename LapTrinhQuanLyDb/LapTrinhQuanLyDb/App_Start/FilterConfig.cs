@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace BT
+namespace LapTrinhQuanLyDb
 {
     public class FilterConfig
     {
