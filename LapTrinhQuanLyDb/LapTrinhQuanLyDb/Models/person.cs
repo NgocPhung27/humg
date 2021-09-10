@@ -12,9 +12,8 @@ namespace LapTrinhQuanLyDb.Models
     {
         [Key]
         public string PersonID { get; set; }
-        [Required(ErrorMessage = "ID sinh viên không được để trống!")]
+
         public string PersonName { get; set; }
-        [Required(ErrorMessage = "Tên sinh viên không được để trống!")]
         public string PersonAddress { get; set; }
     }
 }

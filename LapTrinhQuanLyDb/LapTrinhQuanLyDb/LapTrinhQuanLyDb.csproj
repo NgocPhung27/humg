@@ -132,6 +132,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109100721323_migration_People.cs" />
+    <Compile Include="Migrations\202109100721323_migration_People.Designer.cs">
+      <DependentUpon>202109100721323_migration_People.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LTQLDbContext.cs" />
     <Compile Include="Models\person.cs" />
@@ -189,6 +193,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202109100721323_migration_People.resx">
+      <DependentUpon>202109100721323_migration_People.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
