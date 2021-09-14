@@ -142,6 +142,10 @@
     <Compile Include="Migrations\202109140654274_create_table_employee.Designer.cs">
       <DependentUpon>202109140654274_create_table_employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109140722142_create_table_employee1.cs" />
+    <Compile Include="Migrations\202109140722142_create_table_employee1.Designer.cs">
+      <DependentUpon>202109140722142_create_table_employee1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LTQLDbContext.cs" />
@@ -217,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109140654274_create_table_employee.resx">
       <DependentUpon>202109140654274_create_table_employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109140722142_create_table_employee1.resx">
+      <DependentUpon>202109140722142_create_table_employee1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

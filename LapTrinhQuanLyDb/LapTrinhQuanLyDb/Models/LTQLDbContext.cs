@@ -14,7 +14,7 @@ namespace LapTrinhQuanLyDb.Models
         public virtual DbSet<person> Persons { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
 
-        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<person>()
               .Property(e => e.PersonID)
@@ -25,7 +25,12 @@ namespace LapTrinhQuanLyDb.Models
             modelBuilder.Entity<person>()
            .Property(e => e.PersonAddress)
            .IsUnicode(true);
+            modelBuilder.Entity<Employee>()
+          .Property(e => e.Company)
+          .IsUnicode(true);
 
-        }*/
+
+
+        }
     }
 }
