@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1A952A23-5F84-4F4C-AF08-9049089AF897}</ProjectGuid>
+    <ProjectGuid>{4CD46C65-015F-4921-AEAD-E52B5CA8FE96}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LapTrinhQuanLyDb</RootNamespace>
-    <AssemblyName>LapTrinhQuanLyDb</AssemblyName>
+    <RootNamespace>BTDb</RootNamespace>
+    <AssemblyName>BTDb</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -129,17 +129,25 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\peopleController.cs" />
+    <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202109100721323_migration_People.cs" />
-    <Compile Include="Migrations\202109100721323_migration_People.Designer.cs">
-      <DependentUpon>202109100721323_migration_People.cs</DependentUpon>
+    <Compile Include="Migrations\202109100746236_create_table_Person.cs" />
+    <Compile Include="Migrations\202109100746236_create_table_Person.Designer.cs">
+      <DependentUpon>202109100746236_create_table_Person.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109100802337_create_table_Person1.cs" />
+    <Compile Include="Migrations\202109100802337_create_table_Person1.Designer.cs">
+      <DependentUpon>202109100802337_create_table_Person1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109100805397_altr_column_Person.cs" />
+    <Compile Include="Migrations\202109100805397_altr_column_Person.Designer.cs">
+      <DependentUpon>202109100805397_altr_column_Person.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LTQLDbContext.cs" />
-    <Compile Include="Models\person.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -178,11 +186,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\people\Create.cshtml" />
-    <Content Include="Views\people\Delete.cshtml" />
-    <Content Include="Views\people\Details.cshtml" />
-    <Content Include="Views\people\Edit.cshtml" />
-    <Content Include="Views\people\Index.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
+    <Content Include="Views\Person\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -201,8 +206,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202109100721323_migration_People.resx">
-      <DependentUpon>202109100721323_migration_People.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202109100746236_create_table_Person.resx">
+      <DependentUpon>202109100746236_create_table_Person.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109100802337_create_table_Person1.resx">
+      <DependentUpon>202109100802337_create_table_Person1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109100805397_altr_column_Person.resx">
+      <DependentUpon>202109100805397_altr_column_Person.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -221,9 +232,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59504</DevelopmentServerPort>
+          <DevelopmentServerPort>63476</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59504/</IISUrl>
+          <IISUrl>http://localhost:63476/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
