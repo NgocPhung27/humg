@@ -17,7 +17,7 @@ namespace LapTrinhQuanLyDb.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            return View(db.Persons.ToList());
+            return View(db.Employees.ToList());
         }
 
         // GET: Employee/Details/5
@@ -50,7 +50,7 @@ namespace LapTrinhQuanLyDb.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Persons.Add(employee);
+                db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -110,7 +110,7 @@ namespace LapTrinhQuanLyDb.Controllers
         public ActionResult DeleteConfirmed(string id)
         {
             Employee employee = db.Employees.Find(id);
-            db.Persons.Remove(employee);
+            db.Employees.Remove(employee);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -3,17 +3,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace VDDb.Models
+namespace DemoDB.Models
 {
-    public partial class LTQLDbContext : DbContext
+    public partial class LTQLDbConext : DbContext
     {
-        public LTQLDbContext()
-            : base("name=LTQLDbContext")
+        public LTQLDbConext()
+            : base("name=LTQLDbConext")
         {
         }
-        public virtual DbSet<Person> Persons { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
 
+        public virtual DbSet<Person> Persons { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Person>()
@@ -25,9 +24,6 @@ namespace VDDb.Models
             modelBuilder.Entity<Person>()
            .Property(e => e.PersonAddress)
            .IsUnicode(true);
-            modelBuilder.Entity<Employee>()
-          .Property(e => e.Company)
-          .IsUnicode(true);
         }
     }
 }
