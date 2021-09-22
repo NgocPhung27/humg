@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmpNewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\peopleController.cs" />
     <Compile Include="Global.asax.cs">
@@ -147,6 +148,7 @@
       <DependentUpon>202109140722142_create_table_employee1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AutoGenerateKey.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LTQLDbContext.cs" />
     <Compile Include="Models\person.cs" />
@@ -198,6 +200,8 @@
     <Content Include="Views\Employee\Details.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\EmpNew\Index.cshtml" />
+    <Content Include="Views\EmpNew\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
