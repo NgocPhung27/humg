@@ -8,6 +8,7 @@ namespace LapTrinhQuanLyDb.Models
 {
     public class AutoGenerateKey
     {
+        //sinh mã tự động
         public string Generatekey(string id)
         {
             string strkey = "";

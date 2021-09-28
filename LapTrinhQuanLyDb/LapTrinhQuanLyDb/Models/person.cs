@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace LapTrinhQuanLyDb.Models
 {
@@ -14,6 +15,7 @@ namespace LapTrinhQuanLyDb.Models
         public string PersonID { get; set; }
 
         public string PersonName { get; set; }
+   
         public string PersonAddress { get; set; }
     }
 }
