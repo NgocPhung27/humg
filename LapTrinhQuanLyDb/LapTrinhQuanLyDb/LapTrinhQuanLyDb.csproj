@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmpNewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -147,9 +148,15 @@
     <Compile Include="Migrations\202109140722142_create_table_employee1.Designer.cs">
       <DependentUpon>202109140722142_create_table_employee1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110010623031_create_table_account.cs" />
+    <Compile Include="Migrations\202110010623031_create_table_account.Designer.cs">
+      <DependentUpon>202110010623031_create_table_account.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AutoGenerateKey.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\LTQLDbContext.cs" />
     <Compile Include="Models\person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -550,6 +557,8 @@
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\EmpNew\Index.cshtml" />
     <Content Include="Views\EmpNew\Create.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -576,6 +585,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109140722142_create_table_employee1.resx">
       <DependentUpon>202109140722142_create_table_employee1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110010623031_create_table_account.resx">
+      <DependentUpon>202110010623031_create_table_account.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
