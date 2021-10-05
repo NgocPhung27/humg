@@ -45,7 +45,7 @@ namespace LapTrinhQuanLyDb.Controllers
             }
             else if (CheckSesion() == 2)
             {
-                return RedirectToAction("Index", "Home_Le", new { Are = "SVs" });
+                return RedirectToAction("Index", "Home_Le", new { Are = "Sinhvien" });
             }
             ViewBag.ReturnUrl = returnUrl;
             return View();
