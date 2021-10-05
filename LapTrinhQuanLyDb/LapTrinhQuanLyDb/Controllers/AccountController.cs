@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -12,6 +13,7 @@ namespace LapTrinhQuanLyDb.Controllers
     {
         Encrytion encry = new Encrytion();
         LTQLDbContext db = new LTQLDbContext();
+        AutoGenerateKey strPro = new AutoGenerateKey();
         // GET: Accont
         [HttpGet]
         public ActionResult Register()
@@ -34,37 +36,103 @@ namespace LapTrinhQuanLyDb.Controllers
             return View(acc);
         }
         [HttpGet]
-        public ActionResult Login()
+        [AllowAnonymous]
+        public ActionResult Login(string returnUrl)
         {
+            if (CheckSesion() == 1)
+            {
+                return RedirectToAction("Index", "Home_Ad", new { Are = "Admins" });
+            }
+            else if (CheckSesion() == 2)
+            {
+                return RedirectToAction("Index", "Home_Le", new { Are = "SVs" });
+            }
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public ActionResult Login(Account acc)
+        [HttpPost]
+        public ActionResult Login(Account acc, string returnUrl)
         {
-            if (ModelState.IsValid)
+            try
             {
-                string encrytionpass = encry.PasswordEncrytion(acc.Password);
-                var model = db.Accounts.Where(m => m.UserName == acc.UserName && m.Password == encrytionpass).ToList().Count();
-                //thông tin đăng nhập chính xác
-                if (model == 1)
+                if (!string.IsNullOrEmpty(acc.UserName) && !string.IsNullOrEmpty(acc.Password))
                 {
-                    FormsAuthentication.SetAuthCookie(acc.UserName, true);
-                    return RedirectToAction("Index", "Home");
+                    using (var db = new LTQLDbContext()) ;
+                    {
+                        var passToMD5 =strPro.GetMD5(acc.Password);
+                        var account = db.Accounts.Where(m => m.UserName.Equals(acc.UserName) && m.Password.Equals(passToMD5)).Count();
+                        if (account == 1)
+                        {
+                            FormsAuthentication.SetAuthCookie(acc.UserName, false);
+                            Session["idUser"] = acc.UserName;
+                            Session["roleUser"] = acc.RoleID;
+                            return RedirectToLocal(returnUrl);
+                        }
+                        ModelState.AddModelError("", "thông tin đăng nhập chưa chính xác");
+                    }
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Thông tin đăng nhập không chính xác");
-                }
+                ModelState.AddModelError("", "UserName hoặc Password chưa chính xác");
+            }
+            catch
+            {
+                ModelState.AddModelError("", "hệ thống đnag bảo trì, vui lòng liên hệ với quản trị viên");
             }
             return View(acc);
-        }
+        } 
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
+        }
+        //kiểm tra ng dùng đăng nhập với quyền là gì
+     private int CheckSesion()
+        {
+            using(var db = new LTQLDbContext())
+            {
+                var user = HttpContext.Session["idUser"];
+                if ( user != null)
+                {
+                    var role = db.Accounts.Find(user.ToString()).RoleID;
+                    if( role != null)
+                    {
+                        if (role.ToString() == "Admin") 
+                        {
+                            return 1;
+                        } 
+                        else if (role.ToString() == "SV")
+                        {
+                            return 2;
+                        }                                                      
+                    }    
+                }    
 
+            }
+            return 0;           
+        }
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (string.IsNullOrEmpty(returnUrl) || returnUrl == "/")
+            {
+
+                if (CheckSesion() == 1)
+                {
+                    return RedirectToAction("Index", "Home_Ad", new { Areas = "Admins" });
+                }
+                else if (CheckSesion() == 2)
+                {
+                    return RedirectToAction("Index", "Home_Ad", new { Areas = "SVs" });
+                }
+            }
+
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home_Ad");
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ namespace LapTrinhQuanLyDb.Models
         public virtual DbSet<person> Persons { get; set; }
         public virtual DbSet<Account> Accounts{ get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

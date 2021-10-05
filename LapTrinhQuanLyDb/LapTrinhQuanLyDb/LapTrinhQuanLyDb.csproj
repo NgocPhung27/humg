@@ -133,6 +133,7 @@
     <Compile Include="Controllers\EmpNewController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\peopleController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,9 +149,13 @@
     <Compile Include="Migrations\202109140722142_create_table_employee1.Designer.cs">
       <DependentUpon>202109140722142_create_table_employee1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202110010623031_create_table_account.cs" />
-    <Compile Include="Migrations\202110010623031_create_table_account.Designer.cs">
-      <DependentUpon>202110010623031_create_table_account.cs</DependentUpon>
+    <Compile Include="Migrations\202110050553132_create_table_role.cs" />
+    <Compile Include="Migrations\202110050553132_create_table_role.Designer.cs">
+      <DependentUpon>202110050553132_create_table_role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110050616282_account1.cs" />
+    <Compile Include="Migrations\202110050616282_account1.Designer.cs">
+      <DependentUpon>202110050616282_account1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -159,6 +164,8 @@
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\LTQLDbContext.cs" />
     <Compile Include="Models\person.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\UsersRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -559,6 +566,11 @@
     <Content Include="Views\EmpNew\Create.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Roles\Create.cshtml" />
+    <Content Include="Views\Roles\Delete.cshtml" />
+    <Content Include="Views\Roles\Details.cshtml" />
+    <Content Include="Views\Roles\Edit.cshtml" />
+    <Content Include="Views\Roles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -586,8 +598,11 @@
     <EmbeddedResource Include="Migrations\202109140722142_create_table_employee1.resx">
       <DependentUpon>202109140722142_create_table_employee1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202110010623031_create_table_account.resx">
-      <DependentUpon>202110010623031_create_table_account.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202110050553132_create_table_role.resx">
+      <DependentUpon>202110050553132_create_table_role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110050616282_account1.resx">
+      <DependentUpon>202110050616282_account1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
