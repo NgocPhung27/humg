@@ -9,7 +9,6 @@ namespace LapTrinhQuanLyDb.Models
 {
     public partial class Role
     {
-        [Key]
         [StringLength(10)]
         public string RoleID { get; set; }
         [StringLength(10)]

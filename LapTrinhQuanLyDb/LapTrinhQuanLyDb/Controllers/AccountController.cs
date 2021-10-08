@@ -9,6 +9,7 @@ using LapTrinhQuanLyDb.Models;
 
 namespace LapTrinhQuanLyDb.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         Encrytion encry = new Encrytion();
@@ -39,13 +40,9 @@ namespace LapTrinhQuanLyDb.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
-            if (CheckSesion() == 1)
+            if (CheckSesion() != 0)
             {
-                return RedirectToAction("Index", "Home_Ad", new { Are = "Admins" });
-            }
-            else if (CheckSesion() == 2)
-            {
-                return RedirectToAction("Index", "Home_Le", new { Are = "Sinhvien" });
+                return RedirectToLocal(returnUrl);
             }
             ViewBag.ReturnUrl = returnUrl;
             return View();
@@ -58,7 +55,7 @@ namespace LapTrinhQuanLyDb.Controllers
             {
                 if (!string.IsNullOrEmpty(acc.UserName) && !string.IsNullOrEmpty(acc.Password))
                 {
-                    using (var db = new LTQLDbContext()) ;
+                    using (var db = new LTQLDbContext());
                     {
                         var passToMD5 =strPro.GetMD5(acc.Password);
                         var account = db.Accounts.Where(m => m.UserName.Equals(acc.UserName) && m.Password.Equals(passToMD5)).Count();
@@ -76,14 +73,14 @@ namespace LapTrinhQuanLyDb.Controllers
             }
             catch
             {
-                ModelState.AddModelError("", "hệ thống đnag bảo trì, vui lòng liên hệ với quản trị viên");
+                ModelState.AddModelError("", "hệ thống đang bảo trì, vui lòng liên hệ với quản trị viên");
             }
             return View(acc);
         } 
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index","Home");
         }
         //kiểm tra ng dùng đăng nhập với quyền là gì
      private int CheckSesion()
@@ -117,11 +114,11 @@ namespace LapTrinhQuanLyDb.Controllers
 
                 if (CheckSesion() == 1)
                 {
-                    return RedirectToAction("Index", "Home_Ad", new { Areas = "Admins" });
+                    return RedirectToAction("Index","HomeAdmin", new { Areas ="Admins" });
                 }
                 else if (CheckSesion() == 2)
                 {
-                    return RedirectToAction("Index", "Home_Ad", new { Areas = "SVs" });
+                    return RedirectToAction("Index","HomeSV", new { Areas ="Sinhvien" });
                 }
             }
 
@@ -131,7 +128,7 @@ namespace LapTrinhQuanLyDb.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home_Ad");
+                return RedirectToAction("Index", "HomeAdmin");
             }
         }
     }

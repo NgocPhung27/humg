@@ -40,7 +40,6 @@ namespace LapTrinhQuanLyDb.Models
                 str_md5 += b.ToString("X2");
             }
             return str_md5;     
-
         }
   
     }

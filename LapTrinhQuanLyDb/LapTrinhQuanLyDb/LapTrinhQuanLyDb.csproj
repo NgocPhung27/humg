@@ -128,6 +128,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admins\AdminsAreaRegistration.cs" />
+    <Compile Include="Areas\Admins\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Sinhvien\Controllers\HomeSVController.cs" />
+    <Compile Include="Areas\Sinhvien\SinhvienAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\EmpNewController.cs" />
@@ -184,6 +188,11 @@
     <Content Include="Scripts\ckeditor\ckeditor.asp" />
     <Content Include="Scripts\ckeditor\ckeditor.js" />
     <Content Include="Scripts\ckeditor\ckeditor.pack" />
+    <Content Include="Areas\Admins\Views\web.config" />
+    <Content Include="Areas\Admins\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admins\Views\HomeAdmin\About.cshtml" />
+    <Content Include="Areas\Sinhvien\web.config" />
+    <Content Include="Areas\Sinhvien\Views\HomeSV\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\ckeditor\ckeditor.php" />
     <Content Include="Scripts\ckeditor\ckeditor_basic.js" />
@@ -574,6 +583,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admins\Data\" />
+    <Folder Include="Areas\Admins\Views\Shared\" />
+    <Folder Include="Areas\Sinhvien\Data\" />
+    <Folder Include="Areas\Sinhvien\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
