@@ -30,9 +30,6 @@ namespace LapTrinhQuanLyDb.Models
             modelBuilder.Entity<Employee>()
           .Property(e => e.Company)
           .IsUnicode(true);
-
-
-
         }
     }
 }
