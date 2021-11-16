@@ -168,7 +168,6 @@
     <Compile Include="Models\Encrytion.cs" />
     <Compile Include="Models\ExcelProcess.cs" />
     <Compile Include="Models\LTQLDbContext.cs" />
-    <Compile Include="Models\m.cs" />
     <Compile Include="Models\person.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\UsersRoleProvider.cs" />
